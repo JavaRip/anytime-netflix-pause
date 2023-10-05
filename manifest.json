@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "anytimePause",
+  "version": "1.0",
+  "author": "Mozilla",
+  "description": "Allows pausing of Netflix with space bar while next episode is loading",
+  "background": {
+    "scripts": ["anytimePause.js"]
+  },
+  "icons": {
+    "48": "icons/anytimePause-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.netflix.com/*"],
+      "js": ["anytimePause.js"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "activeTab"
+  ]
+}
